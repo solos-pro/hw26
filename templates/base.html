@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{url_for('static', filename='css/styles.min.css')}}" rel="stylesheet">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+        <a href="{{ '/'         }}" class="item__btn-more">Home</a>
+        <a href="{{ '/search'   }}" class="item__btn-more">Поиск</a>
+        <a href="{{ '/bookmarks'}}" class="item__btn-more">Закладки</a>
+        <a href="{{ '/posts/1'  }}" class="item__btn-more">Пост</a>
+        <a href="{{ '/tag/кот'  }}" class="item__btn-more">Тэг_"кот"</a>
+        <a href="{{ '/user_feed/leo/'}}" class="item__btn-more">User</a>
+
+
+        <div>
+            {% block content %} {% endblock %}
+        </div>
+</body>
+</html>

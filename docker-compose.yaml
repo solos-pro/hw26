@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: .
+    ports:
+      - 80:80
+    volumes:
+      - ./app/config.py:/app/config.py
+  pg:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: flask_user
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: flask_db
+    volumes:
+      - ./pg_data:/var/lib/postgresql/data
